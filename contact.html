@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact · Crestwood Feast Journal</title>
+    <meta name="description" content="Reach the Crestwood Feast Journal team — recipe questions, collaborations, or kitchen wisdom.">
+    <!-- Font & minimal reset -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ----- CRESTWOOD IDENTITY: warm slate + clay, serif-driven, generous spacing, cardless cards (border-only) ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4f0;
+            color: #26221e;
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        h1, h2, h3, h4, .hero-title, .logo {
+            font-family: 'Martel', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #2d2823;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            border-left: 6px solid #b36b4b;
+            padding-left: 1.2rem;
+        }
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1.1rem;
+            color: #2f2a25;
+        }
+
+        a {
+            color: #a55838;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted #d6c5b8;
+        }
+        a:hover {
+            color: #7a3f28;
+            border-bottom: 2px solid #b36b4b;
+        }
+
+        .section {
+            margin: 4rem 0 3rem;
+        }
+
+        /* header / nav */
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 1rem;
+            border-bottom: 2px solid #ddd0c4;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #2d2823;
+            letter-spacing: -0.5px;
+            background: #e7ddd2;
+            padding: 0.2rem 1.2rem 0.1rem;
+            border-radius: 40px 8px 40px 8px;
+            display: inline-block;
+        }
+        .logo span {
+            font-weight: 400;
+            color: #b36b4b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        .nav-links a {
+            border-bottom: 0;
+            color: #3d342e;
+        }
+        .nav-links a:hover {
+            border-bottom: 3px solid #b36b4b;
+        }
+        .nav-links li {
+            list-style: none;
+        }
+
+        /* contact hero */
+        .contact-hero {
+            background: #e8dfd5;
+            padding: 2.8rem 3.2rem;
+            border-radius: 60px 12px 60px 12px;
+            margin: 1rem 0 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-hero-text {
+            flex: 2 1 300px;
+        }
+        .contact-hero-text h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.25rem;
+        }
+        .contact-hero-text .subhead {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3d342e;
+            border-left: 4px solid #b36b4b;
+            padding-left: 1.2rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .contact-hero-image {
+            flex: 1 1 160px;
+            text-align: right;
+        }
+        .contact-hero-image img {
+            max-width: 180px;
+            border-radius: 80px 12px 80px 12px;
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+            background: #d6c5b8;
+        }
+
+        /* contact grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.8rem;
+            margin: 2rem 0 1.5rem;
+        }
+        @media (max-width: 750px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .contact-card {
+            background: #fcf9f6;
+            padding: 1.8rem 2rem 2rem;
+            border-radius: 30px 4px 30px 4px;
+            border: 1px solid #ddd0c4;
+            transition: 0.2s;
+        }
+        .contact-card:hover {
+            border-color: #b36b4b;
+            background: #fffcf9;
+        }
+        .contact-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #2d2823;
+        }
+        .contact-card p {
+            font-size: 1rem;
+            color: #3f3832;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 0.8rem 0;
+            font-size: 1.05rem;
+        }
+        .contact-detail strong {
+            min-width: 70px;
+            color: #2d2823;
+        }
+
+        /* form */
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+            color: #2d2823;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1px solid #d6c5b8;
+            border-radius: 40px 4px 40px 4px;
+            background: #fcf9f6;
+            font-size: 1rem;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .form-group textarea {
+            min-height: 140px;
+            border-radius: 20px 4px 20px 4px;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 2px solid #b36b4b;
+            border-color: transparent;
+        }
+
+        .btn-submit {
+            background: #2d2823;
+            color: #f7f4f0;
+            border: 0;
+            padding: 0.7rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #b36b4b;
+        }
+
+        /* office hours / tiny table */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            margin-top: 0.6rem;
+        }
+        .hours-table td {
+            padding: 0.3rem 0.2rem;
+            border-bottom: 1px solid #e6dbd1;
+        }
+        .hours-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .infographic-box {
+            background: #e8dfd5;
+            padding: 1.2rem 2rem;
+            border-radius: 40px 4px 40px 4px;
+            border: 1px solid #b9a99b;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .footer {
+            border-top: 2px solid #ddd0c4;
+            padding: 2rem 0 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #4f443c;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 700px) {
+            .contact-hero { padding: 1.8rem; }
+            .contact-hero-text h1 { font-size: 2.4rem; }
+            .top-nav { flex-direction: column; gap: 0.8rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- header -->
+    <header class="top-nav">
+        <div class="logo">Crestwood <span>Feast Journal</span></div>
+        <div class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" style="border-bottom: 3px solid #b36b4b;">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </div>
+    </header>
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+        <div class="contact-hero-text">
+            <h1>Let’s talk</h1>
+            <div class="subhead">Recipe questions, collaboration ideas, or just to share a kitchen triumph — we’re all ears.</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; margin-top: 0.8rem;">
+                <span style="background: #f7f4f0; padding: 0.2rem 1.4rem; border-radius: 50px; border: 1px solid #b9a99b; font-weight: 600;">✉️ hello@crestwoodfeast.com</span>
+                <span style="background: #f7f4f0; padding: 0.2rem 1.4rem; border-radius: 50px; border: 1px solid #b9a99b; font-weight: 600;">📞 +1 (555) 302-9174</span>
+            </div>
+        </div>
+        <div class="contact-hero-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d6c5b8'/%3E%3Ccircle cx='50' cy='40' r='28' fill='%23b36b4b' opacity='0.4'/%3E%3Cpath d='M20 70 L80 70 L75 85 L25 85 Z' fill='%23917b6b'/%3E%3C/svg%3E"
+                 alt="Crestwood contact — kitchen correspondence">
+        </div>
+    </section>
+
+    <!-- CONTACT GRID: FORM + INFO -->
+    <div class="contact-grid">
+        <!-- left: form -->
+        <div class="contact-card">
+            <h3>Send a message</h3>
+            <p>We reply within 24 hours (except weekends, when we're in the kitchen).</p>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" placeholder="e.g., Jamie Crestwood" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Recipe question, collaboration, ...">
+                </div>
+                <div class="form-group">
+                    <label for="msg">Message</label>
+                    <textarea id="msg" placeholder="Tell us about your cooking journey, a specific recipe, or anything else."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send →</button>
+            </form>
+        </div>
+
+        <!-- right: contact details + hours -->
+        <div class="contact-card">
+            <h3>Connect directly</h3>
+            <div class="contact-detail"><strong>Email</strong> <span>hello@crestwoodfeast.com</span></div>
+            <div class="contact-detail"><strong>Phone</strong> <span>+1 (555) 302-9174</span></div>
+            <div class="contact-detail"><strong>Social</strong> <span>@crestwoodfeast (IG / X)</span></div>
+            <div style="margin: 1.2rem 0 0.8rem; border-top: 1px solid #ddd0c4; padding-top: 1.2rem;">
+                <h4 style="font-family: 'Martel', serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.2rem;">📬 Office hours</h4>
+                <table class="hours-table">
+                    <tr><td>Monday – Friday</td><td>9:00 – 17:00 (EST)</td></tr>
+                    <tr><td>Saturday</td><td>10:00 – 14:00 (EST)</td></tr>
+                    <tr><td>Sunday</td><td>closed · kitchen experiments</td></tr>
+                </table>
+            </div>
+            <div class="infographic-box" style="margin-top: 1rem;">
+                <span style="display: flex; align-items: center; gap: 0.4rem;">📍 42 Crestwood Lane · Vermont, USA</span>
+            </div>
+            <p style="font-size: 0.95rem; margin-top: 1rem; color: #5f5247;">We love hearing from fellow cooks, bakers, and fermentation enthusiasts. If you're writing about a specific recipe, mention the title — it helps us dive right in.</p>
+        </div>
+    </div>
+
+    <!-- FREQUENT CONTACT TOPICS (optional) -->
+    <section class="section" style="margin-top: 1.5rem;">
+        <h2>Common inquiries</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem;">
+            <span style="background: #f0e8e0; padding: 0.3rem 1.8rem; border-radius: 40px 4px 40px 4px; border: 1px solid #d6c5b8; font-weight: 600;">📖 Recipe troubleshooting</span>
+            <span style="background: #f0e8e0; padding: 0.3rem 1.8rem; border-radius: 40px 4px 40px 4px; border: 1px solid #d6c5b8; font-weight: 600;">🧪 Ingredient substitutions</span>
+            <span style="background: #f0e8e0; padding: 0.3rem 1.8rem; border-radius: 40px 4px 40px 4px; border: 1px solid #d6c5b8; font-weight: 600;">🎙️ Media / press</span>
+            <span style="background: #f0e8e0; padding: 0.3rem 1.8rem; border-radius: 40px 4px 40px 4px; border: 1px solid #d6c5b8; font-weight: 600;">🤝 Collaboration</span>
+        </div>
+    </section>
+
+    <!-- MAP / VISUAL (simple illustration) -->
+    <section class="section" style="margin-top: 2rem;">
+        <div style="background: #e8dfd5; padding: 1.2rem 2.2rem; border-radius: 60px 8px 60px 8px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            <span style="font-weight: 600; font-family: 'Martel', serif; font-size: 1.3rem;">📍 Crestwood Kitchen</span>
+            <span style="background: #f7f4f0; padding: 0.2rem 1.4rem; border-radius: 40px; border: 1px solid #b9a99b;">42 Crestwood Lane, VT 05602</span>
+            <span style="font-size: 1rem;">✶ <a href="#" style="border-bottom: 0;">Get directions</a></span>
+        </div>
+        <!-- small decorative image: kitchen map vibe -->
+        <div style="margin-top: 1.2rem; text-align: center;">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='120' viewBox='0 0 480 120'%3E%3Crect width='480' height='120' fill='%23d6c5b8'/%3E%3Crect x='30' y='30' width='80' height='60' fill='%23b36b4b' opacity='0.3'/%3E%3Crect x='140' y='40' width='60' height='40' fill='%23917b6b' opacity='0.3'/%3E%3Crect x='250' y='20' width='100' height='70' fill='%23b36b4b' opacity='0.2'/%3E%3Crect x='380' y='30' width='60' height='50' fill='%238f7a6a' opacity='0.3'/%3E%3C/svg%3E"
+                 alt="Crestwood kitchen map illustration" style="max-width:100%; border-radius: 40px 4px 40px 4px;">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span>© 2026 Crestwood Feast Journal — recipe authority since 2016</span>
+        <span>✶ 10+ years of kitchen science</span>
+    </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

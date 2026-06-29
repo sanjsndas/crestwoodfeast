@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Crestwood Feast Journal</title>
+    <meta name="description" content="Learn the story behind Crestwood Feast Journal — a decade of kitchen science, tested recipes, and a passion for the craft of cooking.">
+    <!-- Font & minimal reset -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ----- UNIQUE IDENTITY: “Crestwood” — warm slate + clay, serif-driven, generous spacing ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4f0;
+            color: #26221e;
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        /* typography */
+        h1, h2, h3, h4, .hero-title, .logo {
+            font-family: 'Martel', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #2d2823;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            border-left: 6px solid #b36b4b;
+            padding-left: 1.2rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 2rem 0 0.8rem;
+            color: #3d342e;
+        }
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1.1rem;
+            color: #2f2a25;
+        }
+
+        a {
+            color: #a55838;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted #d6c5b8;
+        }
+        a:hover {
+            color: #7a3f28;
+            border-bottom: 2px solid #b36b4b;
+        }
+
+        /* header / nav */
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 1rem;
+            border-bottom: 2px solid #ddd0c4;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #2d2823;
+            letter-spacing: -0.5px;
+            background: #e7ddd2;
+            padding: 0.2rem 1.2rem 0.1rem;
+            border-radius: 40px 8px 40px 8px;
+            display: inline-block;
+        }
+        .logo span {
+            font-weight: 400;
+            color: #b36b4b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        .nav-links a {
+            border-bottom: 0;
+            color: #3d342e;
+        }
+        .nav-links a:hover {
+            border-bottom: 3px solid #b36b4b;
+        }
+
+        /* hero — content-first for about */
+        .hero {
+            background: #e8dfd5;
+            padding: 2.8rem 3.2rem;
+            border-radius: 60px 12px 60px 12px;
+            margin: 1rem 0 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero-text {
+            flex: 2 1 300px;
+        }
+        .hero-text h1 {
+            font-size: 3.6rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        .hero-text .subhead {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3d342e;
+            max-width: 600px;
+            border-left: 4px solid #b36b4b;
+            padding-left: 1.2rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .hero-image {
+            flex: 1 1 160px;
+            text-align: right;
+        }
+        .hero-image img {
+            max-width: 180px;
+            border-radius: 80px 12px 80px 12px;
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+            background: #d6c5b8;
+        }
+
+        /* cardless cards */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .about-card {
+            background: #fcf9f6;
+            padding: 1.8rem 1.8rem 2rem;
+            border-radius: 30px 4px 30px 4px;
+            border: 1px solid #ddd0c4;
+            transition: 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .about-card:hover {
+            border-color: #b36b4b;
+            background: #fffcf9;
+        }
+        .about-card .icon-tag {
+            font-size: 2.4rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+        .about-card h3 {
+            font-size: 1.4rem;
+            margin: 0.2rem 0 0.5rem;
+            font-weight: 700;
+        }
+        .about-card p {
+            font-size: 1rem;
+            color: #3f3832;
+        }
+
+        /* checklist style */
+        .checklist {
+            background: #f3ede7;
+            padding: 1.2rem 2rem;
+            border-radius: 20px 4px 20px 4px;
+            margin: 1.8rem 0;
+            border-left: 6px solid #b36b4b;
+        }
+        .checklist li {
+            list-style: none;
+            padding: 0.3rem 0;
+            font-weight: 400;
+        }
+        .checklist li::before {
+            content: "▹ ";
+            color: #b36b4b;
+            font-weight: 700;
+        }
+
+        /* stats / milestone */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            background: #e8dfd5;
+            padding: 2rem 2.8rem;
+            border-radius: 60px 8px 60px 8px;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        .stats-grid .stat {
+            text-align: center;
+        }
+        .stats-grid .stat-number {
+            font-family: 'Martel', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #2d2823;
+            line-height: 1;
+        }
+        .stats-grid .stat-label {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4f443c;
+        }
+
+        /* footer */
+        .footer {
+            border-top: 2px solid #ddd0c4;
+            padding: 2rem 0 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #4f443c;
+        }
+
+        @media (max-width: 700px) {
+            .hero { padding: 1.8rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .top-nav { flex-direction: column; gap: 0.8rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.8rem; }
+            .stats-grid .stat-number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- header -->
+    <header class="top-nav">
+        <div class="logo">Crestwood <span>Feast Journal</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" style="border-bottom: 3px solid #b36b4b;">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms Of Privacy</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookies.html">Cookies Policy</a>
+        </div>
+    </header>
+
+    <!-- HERO: about introduction -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>About the journal</h1>
+            <div class="subhead">Founded in 2016, Crestwood Feast Journal is a quiet corner of the internet dedicated to the craft of cooking — where recipes meet science, and technique meets intuition.</div>
+            <p style="margin-top: 0.6rem; max-width: 600px;">We believe great cooking is built on curiosity. Every recipe we share has been tested, tasted, and refined. Our mission is to equip you with the knowledge to cook with confidence, whether you're a seasoned chef or a curious beginner.</p>
+        </div>
+        <div class="hero-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d6c5b8'/%3E%3Ccircle cx='50' cy='45' r='22' fill='%23b36b4b' opacity='0.5'/%3E%3Cpath d='M30 70 L70 70 L65 85 L35 85 Z' fill='%23917b6b'/%3E%3Crect x='45' y='18' width='10' height='12' fill='%237a3f28'/%3E%3C/svg%3E"
+                 alt="Crestwood Feast Journal — artisan cooking illustration">
+        </div>
+    </section>
+
+    <!-- Our Story + Stats -->
+    <section>
+        <h2>Our story</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+            <div>
+                <p><strong>Crestwood Feast Journal</strong> began as a personal notebook — a place to document kitchen experiments, failed loaves, and accidental triumphs. Over the years, it grew into a community of cooks who value precision, flavour, and the joy of discovery.</p>
+                <p>We don't chase trends. We chase understanding. From the Maillard reaction to the ideal sourdough hydration, we break down the why behind the how — so you can adapt, improvise, and make every recipe your own.</p>
+            </div>
+            <div>
+                <ul class="checklist" style="border-left-color: #8f7a6a;">
+                    <li>Every recipe tested 5+ times</li>
+                    <li>Ingredient science in plain language</li>
+                    <li>Metric + imperial for global readers</li>
+                    <li>Techniques rooted in tradition and modern food science</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Milestones -->
+    <div class="stats-grid">
+        <div class="stat"><div class="stat-number">10+</div><div class="stat-label">Years of kitchen science</div></div>
+        <div class="stat"><div class="stat-number">450+</div><div class="stat-label">Tested recipes</div></div>
+        <div class="stat"><div class="stat-number">80+</div><div class="stat-label">Ingredient deep-dives</div></div>
+        <div class="stat"><div class="stat-number">∞</div><div class="stat-label">Curiosity</div></div>
+    </div>
+
+    <!-- Meet the team (or philosophy) -->
+    <section>
+        <h2>Our philosophy</h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <span class="icon-tag">🔬</span>
+                <h3>Science-led</h3>
+                <p>We explore the chemistry and physics behind cooking — from protein denaturation to emulsification — so you can troubleshoot and perfect any dish.</p>
+            </div>
+            <div class="about-card">
+                <span class="icon-tag">🌱</span>
+                <h3>Ingredient-first</h3>
+                <p>Great cooking starts with great ingredients. We celebrate seasonal produce, artisanal grains, and the stories behind what we eat.</p>
+            </div>
+            <div class="about-card">
+                <span class="icon-tag">📖</span>
+                <h3>For the curious</h3>
+                <p>Whether you're a home cook or a professional, we believe there's always something new to learn. Our guides are designed to grow with you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Cover -->
+    <section>
+        <h2>What we cover</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1.6rem; margin-bottom: 1.5rem;">
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Bread & sourdough</span>
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Fermentation</span>
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Sauces & emulsions</span>
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Pastry arts</span>
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Ingredient science</span>
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Knife skills</span>
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Meat & poultry</span>
+            <span style="background:#e8dfd5; padding:0.4rem 1.8rem; border-radius:40px 4px 40px 4px; border:1px solid #d6c5b8; font-weight:600;">Vegetables & herbs</span>
+        </div>
+    </section>
+
+    <!-- Editorial standards -->
+    <section>
+        <h2>Our editorial standards</h2>
+        <div style="background: #f3ede7; padding: 1.5rem 2.2rem; border-radius: 30px 4px 30px 4px; border-left: 6px solid #b36b4b;">
+            <ul class="checklist" style="background: transparent; padding: 0; margin: 0; border-left: 0;">
+                <li><strong>Rigorous testing:</strong> Every recipe is tested in a home kitchen environment, with adjustments for common pitfalls.</li>
+                <li><strong>Clear instructions:</strong> We avoid jargon and explain every step — from mise en place to plating.</li>
+                <li><strong>Ingredient integrity:</strong> We recommend specific brands and types where they matter, and offer substitutes when they don't.</li>
+                <li><strong>No paid endorsements:</strong> Our recommendations are based on quality, not sponsorship.</li>
+                <li><strong>Continuous improvement:</strong> We update our guides as we learn more — cooking is a living practice.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-item" style="border-bottom:1px solid #d6c5b8; padding:1.2rem 0;">
+            <strong style="font-family:'Martel',serif; font-size:1.2rem;">Who writes the content?</strong>
+            <p>Crestwood Feast Journal is written by a small team of passionate cooks, led by our founder who has over a decade of professional and home kitchen experience. We collaborate with guest experts for specialist topics.</p>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #d6c5b8; padding:1.2rem 0;">
+            <strong style="font-family:'Martel',serif; font-size:1.2rem;">Can I submit a recipe or suggestion?</strong>
+            <p>Absolutely. We love hearing from our community. Visit our <a href="contact.html">Contact page</a> to share your ideas, ask questions, or suggest topics you'd like us to cover.</p>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #d6c5b8; padding:1.2rem 0;">
+            <strong style="font-family:'Martel',serif; font-size:1.2rem;">How can I support Crestwood Feast Journal?</strong>
+            <p>Sharing our articles, subscribing to our newsletter, and cooking with us is the best support. We also welcome thoughtful feedback — it helps us grow and improve.</p>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" style="background:#e8dfd5; padding:2.2rem 2.8rem; border-radius:60px 8px 60px 8px; margin:3rem 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+        <div><strong style="font-size:1.5rem; font-family:Martel,serif;">The Crestwood Dispatch</strong><br>Weekly insights, never spam.</div>
+        <div><input type="email" placeholder="your@email.com" style="padding:0.6rem 1.2rem; border:1px solid #b9a99b; border-radius:60px; font-size:1rem; min-width:220px; background:#fcf9f6;"> <button style="background:#2d2823; color:#f7f4f0; border:0; padding:0.6rem 2rem; border-radius:60px; font-weight:700; font-size:1rem; cursor:pointer;">Subscribe</button></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span>© 2026 Crestwood Feast Journal — recipe authority since 2016</span>
+        <span>✶ 10+ years of kitchen science</span>
+    </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy · Crestwood Feast Journal</title>
+    <meta name="description" content="Cookies Policy for Crestwood Feast Journal — how we use cookies to enhance your experience.">
+    <!-- Font & minimal reset -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ----- CRESTWOOD IDENTITY: warm slate + clay, serif-driven, generous spacing, border-only cards ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4f0;
+            color: #26221e;
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        h1, h2, h3, h4, .hero-title, .logo {
+            font-family: 'Martel', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #2d2823;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            border-left: 6px solid #b36b4b;
+            padding-left: 1.2rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #2d2823;
+        }
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1.1rem;
+            color: #2f2a25;
+        }
+
+        a {
+            color: #a55838;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted #d6c5b8;
+        }
+        a:hover {
+            color: #7a3f28;
+            border-bottom: 2px solid #b36b4b;
+        }
+
+        .section {
+            margin: 4rem 0 3rem;
+        }
+
+        /* header / nav */
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 1rem;
+            border-bottom: 2px solid #ddd0c4;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #2d2823;
+            letter-spacing: -0.5px;
+            background: #e7ddd2;
+            padding: 0.2rem 1.2rem 0.1rem;
+            border-radius: 40px 8px 40px 8px;
+            display: inline-block;
+        }
+        .logo span {
+            font-weight: 400;
+            color: #b36b4b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        .nav-links a {
+            border-bottom: 0;
+            color: #3d342e;
+        }
+        .nav-links a:hover {
+            border-bottom: 3px solid #b36b4b;
+        }
+        .nav-links li {
+            list-style: none;
+        }
+
+        /* cookies hero */
+        .cookies-hero {
+            background: #e8dfd5;
+            padding: 2.8rem 3.2rem;
+            border-radius: 60px 12px 60px 12px;
+            margin: 1rem 0 3rem;
+        }
+        .cookies-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.25rem;
+        }
+        .cookies-hero .subhead {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3d342e;
+            border-left: 4px solid #b36b4b;
+            padding-left: 1.2rem;
+            margin: 0.8rem 0 0;
+        }
+
+        /* content card */
+        .privacy-card {
+            background: #fcf9f6;
+            padding: 2rem 2.8rem;
+            border-radius: 30px 4px 30px 4px;
+            border: 1px solid #ddd0c4;
+            margin-bottom: 2rem;
+        }
+        .privacy-card ul {
+            margin: 0.5rem 0 1.2rem 1.8rem;
+            font-size: 1.05rem;
+            color: #2f2a25;
+        }
+        .privacy-card li {
+            margin-bottom: 0.3rem;
+        }
+
+        .highlight-box {
+            background: #f0e8e0;
+            padding: 1.2rem 2rem;
+            border-radius: 40px 4px 40px 4px;
+            border-left: 6px solid #b36b4b;
+            margin: 1.8rem 0;
+        }
+
+        .footer {
+            border-top: 2px solid #ddd0c4;
+            padding: 2rem 0 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #4f443c;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 700px) {
+            .cookies-hero { padding: 1.8rem; }
+            .cookies-hero h1 { font-size: 2.4rem; }
+            .top-nav { flex-direction: column; gap: 0.8rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.8rem; }
+            .privacy-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- header -->
+    <header class="top-nav">
+        <div class="logo">Crestwood <span>Feast Journal</span></div>
+        <div class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html" style="border-bottom: 3px solid #b36b4b;">Cookies Policy</a></li>
+        </div>
+    </header>
+
+    <!-- COOKIES HERO -->
+    <section class="cookies-hero">
+        <h1>🍪 Cookies Policy</h1>
+        <div class="subhead">We use cookies to make your feast better — just like a pinch of salt. Learn what we use and how you can manage them.</div>
+        <div style="margin-top: 1rem; font-size: 0.95rem; color: #4f443c;">
+            <span>📅 Last updated: June 25, 2026</span> &nbsp;·&nbsp; <span>📌 Effective: July 1, 2026</span>
+        </div>
+    </section>
+
+    <!-- COOKIES CONTENT -->
+    <div class="privacy-card">
+        <h2>What are cookies?</h2>
+        <p>Cookies are small text files that are stored on your device when you visit a website. They help us remember your preferences, understand how you interact with our content, and improve your overall experience. Think of them as the kitchen helpers that make everything run smoothly.</p>
+
+        <div class="highlight-box">
+            <strong>🥄 In short:</strong> Cookies help us remember your preferences, analyze site traffic, and serve you better. We never use them to track you across the web for advertising purposes.
+        </div>
+
+        <h2>How we use cookies</h2>
+        <p>We use cookies for the following purposes:</p>
+        <ul>
+            <li><strong>Essential cookies:</strong> These are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.</li>
+            <li><strong>Performance & analytics:</strong> We use anonymized data to understand which recipes and articles are most popular. This helps us create more of what you love.</li>
+            <li><strong>Preference cookies:</strong> These remember your settings (like language or display preferences) so you don't have to set them each time.</li>
+            <li><strong>Comment cookies:</strong> If you leave a comment, we may store your name and email in a cookie for your convenience (so you don't have to re-enter them).</li>
+        </ul>
+
+        <h2>Types of cookies we use</h2>
+        <ul>
+            <li><strong>Session cookies:</strong> Temporary cookies that expire when you close your browser.</li>
+            <li><strong>Persistent cookies:</strong> These remain on your device for a set period (up to 12 months) or until you delete them.</li>
+            <li><strong>First-party cookies:</strong> Set by us directly.</li>
+            <li><strong>Third-party cookies:</strong> We use minimal third-party cookies (e.g., for analytics) from trusted partners like Fathom or Plausible — both are privacy-first and do not track you across sites.</li>
+        </ul>
+
+        <h2>Your choices</h2>
+        <p>You are in control. You can:</p>
+        <ul>
+            <li>Accept or decline cookies via your browser settings.</li>
+            <li>Delete existing cookies at any time.</li>
+            <li>Use your browser's "private" or "incognito" mode to browse without storing cookies.</li>
+        </ul>
+        <p>Most browsers allow you to manage cookie preferences. You can usually find these settings in the "Options" or "Preferences" menu. For more detailed guidance, visit <a href="https://www.aboutcookies.org" target="_blank" rel="noopener">AboutCookies.org</a>.</p>
+
+        <h2>Managing cookies in your browser</h2>
+        <ul>
+            <li><strong>Chrome:</strong> Settings → Privacy and security → Cookies and other site data.</li>
+            <li><strong>Firefox:</strong> Options → Privacy & Security → Cookies and Site Data.</li>
+            <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data.</li>
+            <li><strong>Edge:</strong> Settings → Cookies and site permissions.</li>
+        </ul>
+
+        <h2>Updates to this policy</h2>
+        <p>We may update this Cookies Policy occasionally to reflect changes in technology or regulations. We will notify you of significant changes via a notice on our website or by email (if you have subscribed). The "Last updated" date at the top indicates the latest revision.</p>
+
+        <h2>More questions?</h2>
+        <p>If you have any questions about our use of cookies, feel free to <a href="contact.html">contact us</a>. We're happy to help — just like we're happy to share our favourite cookie recipes (we have a mean chocolate chip one).</p>
+        <p style="margin-top: 1.2rem;">📬 <strong>Email:</strong> <a href="mailto:hello@crestwoodfeast.com">hello@crestwoodfeast.com</a> &nbsp;·&nbsp; 📞 <strong>Phone:</strong> +1 (555) 302-9174</p>
+    </div>
+
+    <!-- quick nav back to contact & privacy -->
+    <section style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+        <a href="contact.html" style="background: #e8dfd5; padding: 0.4rem 1.8rem; border-radius: 40px; border: 1px solid #b9a99b; font-weight: 600; border-bottom: 0;">← Back to Contact</a>
+        <a href="privacy.html" style="background: #e8dfd5; padding: 0.4rem 1.8rem; border-radius: 40px; border: 1px solid #b9a99b; font-weight: 600; border-bottom: 0;">🔒 Privacy Policy</a>
+        <a href="index.html" style="background: #e8dfd5; padding: 0.4rem 1.8rem; border-radius: 40px; border: 1px solid #b9a99b; font-weight: 600; border-bottom: 0;">🏠 Home</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span>© 2026 Crestwood Feast Journal — recipe authority since 2016</span>
+        <span>✶ 10+ years of kitchen science</span>
+    </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

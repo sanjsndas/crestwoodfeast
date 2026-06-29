@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crestwood Feast Journal · premium recipe authority</title>
+    <meta name="description" content="Crestwood Feast Journal — deep-dive recipe guides, ingredient science, and kitchen wisdom from a decade of tested techniques.">
+    <!-- Font & minimal reset -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ----- UNIQUE IDENTITY: “Crestwood” — warm slate + clay, serif-driven, generous spacing, cardless cards (border-only) ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4f0;  /* warm limestone */
+            color: #26221e;
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        /* typography — Martel for headlines, serif authority */
+        h1, h2, h3, h4, .hero-title, .logo {
+            font-family: 'Martel', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #2d2823;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            border-left: 6px solid #b36b4b;  /* clay accent */
+            padding-left: 1.2rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 2rem 0 0.8rem;
+            color: #3d342e;
+        }
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1.1rem;
+            color: #2f2a25;
+        }
+
+        a {
+            color: #a55838;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted #d6c5b8;
+        }
+        a:hover {
+            color: #7a3f28;
+            border-bottom: 2px solid #b36b4b;
+        }
+
+        /* unique spacing system — generous vertical rhythm */
+        .section {
+            margin: 4rem 0 3rem;
+        }
+
+        /* header / nav */
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 1rem;
+            border-bottom: 2px solid #ddd0c4;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #2d2823;
+            letter-spacing: -0.5px;
+            background: #e7ddd2;
+            padding: 0.2rem 1.2rem 0.1rem;
+            border-radius: 40px 8px 40px 8px;
+            display: inline-block;
+        }
+        .logo span {
+            font-weight: 400;
+            color: #b36b4b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        .nav-links a {
+            border-bottom: 0;
+            color: #3d342e;
+        }
+        .nav-links a:hover {
+            border-bottom: 3px solid #b36b4b;
+        }
+
+        /* hero — content-first, minimal image */
+        .hero {
+            background: #e8dfd5;
+            padding: 2.8rem 3.2rem;
+            border-radius: 60px 12px 60px 12px;
+            margin: 1rem 0 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero-text {
+            flex: 2 1 300px;
+        }
+        .hero-text h1 {
+            font-size: 3.6rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        .hero-text .subhead {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3d342e;
+            max-width: 600px;
+            border-left: 4px solid #b36b4b;
+            padding-left: 1.2rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .hero-image {
+            flex: 1 1 160px;
+            text-align: right;
+        }
+        .hero-image img {
+            max-width: 180px;
+            border-radius: 80px 12px 80px 12px;
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+            background: #d6c5b8;
+        }
+
+        /* featured topics pill */
+        .featured-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin: 1.2rem 0 0;
+        }
+        .featured-topics span {
+            background: #f7f4f0;
+            padding: 0.2rem 1.4rem;
+            border-radius: 50px;
+            border: 1px solid #b9a99b;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* article grid — unique cardless design: border + subtle background */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .article-card {
+            background: #fcf9f6;
+            padding: 1.8rem 1.8rem 2rem;
+            border-radius: 30px 4px 30px 4px;
+            border: 1px solid #ddd0c4;
+            transition: 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .article-card:hover {
+            border-color: #b36b4b;
+            background: #fffcf9;
+        }
+        .article-card .cat-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a55838;
+            font-weight: 700;
+            border-bottom: 2px solid #d6c5b8;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 0.6rem;
+        }
+        .article-card h3 {
+            font-size: 1.6rem;
+            margin: 0.2rem 0 0.5rem;
+            font-weight: 700;
+        }
+        .article-card p {
+            font-size: 1rem;
+            color: #3f3832;
+        }
+        .article-card .meta {
+            font-size: 0.9rem;
+            color: #6b5e54;
+            margin-top: 0.6rem;
+            border-top: 1px solid #e6dbd1;
+            padding-top: 0.8rem;
+        }
+
+        /* featured image inside card */
+        .card-img {
+            border-radius: 24px 4px 24px 4px;
+            max-width: 100%;
+            height: auto;
+            margin: 0.8rem 0 0.4rem;
+            background: #d6c5b8;
+        }
+
+        /* category / resource blocks — minimal */
+        .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .category-item {
+            background: #f0e8e0;
+            padding: 0.4rem 1.8rem;
+            border-radius: 40px 4px 40px 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid #d6c5b8;
+        }
+        .category-item img {
+            vertical-align: middle;
+            margin-right: 6px;
+            max-height: 24px;
+            border-radius: 30px;
+        }
+
+        /* table / checklist style */
+        .checklist, .table-wrap {
+            background: #f3ede7;
+            padding: 1.2rem 2rem;
+            border-radius: 20px 4px 20px 4px;
+            margin: 1.8rem 0;
+            border-left: 6px solid #b36b4b;
+        }
+        .checklist li {
+            list-style: none;
+            padding: 0.3rem 0;
+            font-weight: 400;
+        }
+        .checklist li::before {
+            content: "▹ ";
+            color: #b36b4b;
+            font-weight: 700;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+        th {
+            background: #d6c5b8;
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+            font-weight: 700;
+        }
+        td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid #ddd0c4;
+        }
+
+        /* FAQ schema-ready */
+        .faq-item {
+            border-bottom: 1px solid #d6c5b8;
+            padding: 1.2rem 0;
+        }
+        .faq-item strong {
+            font-size: 1.2rem;
+            font-family: 'Martel', serif;
+            font-weight: 700;
+            display: block;
+        }
+
+        /* newsletter */
+        .newsletter {
+            background: #e8dfd5;
+            padding: 2.2rem 2.8rem;
+            border-radius: 60px 8px 60px 8px;
+            margin: 3rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .newsletter input {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid #b9a99b;
+            border-radius: 60px;
+            font-size: 1rem;
+            min-width: 220px;
+            background: #fcf9f6;
+        }
+        .newsletter button {
+            background: #2d2823;
+            color: #f7f4f0;
+            border: 0;
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .newsletter button:hover {
+            background: #b36b4b;
+        }
+
+        /* footer */
+        .footer {
+            border-top: 2px solid #ddd0c4;
+            padding: 2rem 0 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #4f443c;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .hero { padding: 1.8rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .top-nav { flex-direction: column; gap: 0.8rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.8rem; }
+        }
+
+        /* extra unique touches: “infographic” placeholder */
+        .infographic-box {
+            background: #e8dfd5;
+            padding: 1.2rem 2rem;
+            border-radius: 40px 4px 40px 4px;
+            border: 1px solid #b9a99b;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0 1.5rem;
+        }
+        .infographic-box img {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+
+        /* utility */
+        .flex-between { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- header -->
+    <header class="top-nav">
+        <div class="logo">Crestwood <span>Feast Journal</span></div>
+        <div class="nav-links">
+            <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+        </div>
+    </header>
+
+    <!-- HERO: detailed intro + niche overview + featured topics (content-first) -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Recipes as craft</h1>
+            <div class="subhead">Ten years of tested techniques, ingredient deep-dives, and the science behind flavour — for cooks who never stop learning.</div>
+            <div class="featured-topics">
+                <span>🧂 Fermentation</span>
+                <span>🔥 Sourdough</span>
+                <span>🍅 Heirloom tomatoes</span>
+                <span>🥩 Dry-aging</span>
+                <span>🌿 Herbal infusions</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- 1 HERO IMAGE -->
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d6c5b8'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23b36b4b' opacity='0.5'/%3E%3Cpath d='M20 70 L80 70 L70 85 L30 85 Z' fill='%23917b6b'/%3E%3C/svg%3E"
+                 alt="Crestwood kitchen still life — artisan bread and herbs">
+        </div>
+    </section>
+
+    <!-- FEATURED ARTICLES (3 cards) + 1 featured image inside card -->
+    <section class="section">
+        <h2>Featured articles</h2>
+        <div class="article-grid">
+            <article class="article-card">
+                <span class="cat-tag">Technique</span>
+                <h3>The emulsion matrix</h3>
+                <p>Mayonnaise, vinaigrettes, and the physics of stable sauces. A practical guide with troubleshooting tables.</p>
+                <!-- FEATURED ARTICLE IMAGE (1) -->
+                <img class="card-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='140' viewBox='0 0 280 140'%3E%3Crect width='280' height='140' fill='%23d6c5b8'/%3E%3Ccircle cx='100' cy='60' r='28' fill='%23b36b4b' opacity='0.4'/%3E%3Ccircle cx='180' cy='60' r='28' fill='%23917b6b' opacity='0.3'/%3E%3C/svg%3E"
+                     alt="Emulsion technique illustration">
+                <div class="meta">⏱ 22 min read · 6 key steps</div>
+            </article>
+            <article class="article-card">
+                <span class="cat-tag">Ingredient</span>
+                <h3>Flour power: protein & hydration</h3>
+                <p>Bread flour vs. all-purpose — a data-driven comparison for bakers. Includes hydration calculator.</p>
+                <div class="meta">📊 18 min read · 4 experiments</div>
+            </article>
+            <article class="article-card">
+                <span class="cat-tag">Science</span>
+                <h3>Maillard: the flavour cascade</h3>
+                <p>From seared steak to roasted coffee — how temperature and time create complexity.</p>
+                <div class="meta">🔥 25 min read · 7 variables</div>
+            </article>
+        </div>
+    </section>
+
+    <!-- BEGINNER GUIDES + EXPERT RESOURCES (dual column) -->
+    <section class="section">
+        <div class="flex-between">
+            <h2 style="border-left-color: #8f7a6a;">Beginner guides</h2>
+            <h2 style="border-left-color: #b36b4b;">Expert resources</h2>
+        </div>
+        <div class="article-grid" style="grid-template-columns: 1fr 1fr;">
+            <div>
+                <ul class="checklist" style="background:#f3ede7; border-left-color:#8f7a6a;">
+                    <li>Knife skills — 5 foundational cuts</li>
+                    <li>Stock & broth — from bones to bouquet</li>
+                    <li>Egg cookery: temperatures & timing</li>
+                    <li>Seasoning layers: salt, acid, fat, heat</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="checklist" style="background:#f3ede7; border-left-color:#b36b4b;">
+                    <li>Hydrocolloids in modernist cooking</li>
+                    <li>Enzymatic browning control</li>
+                    <li>Fermentation metrics: pH, salinity, time</li>
+                    <li>Flavor pairing theory — aroma compounds</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR CATEGORIES (with category image) -->
+    <section class="section">
+        <h2>Popular categories</h2>
+        <div class="category-grid">
+            <div class="category-item"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23b36b4b'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3C/svg%3E" alt=""> Bread & dough</div>
+            <div class="category-item"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23917b6b'%3E%3Crect x='4' y='4' width='16' height='16'/%3E%3C/svg%3E" alt=""> Sauces & emulsions</div>
+            <div class="category-item"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%238f7a6a'%3E%3Cpath d='M12 2 L15 9 L22 9 L16 14 L18 21 L12 17 L6 21 L8 14 L2 9 L9 9 Z'/%3E%3C/svg%3E" alt=""> Vegetables & ferments</div>
+            <div class="category-item"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23b36b4b'%3E%3Cpath d='M6 6 L18 6 L18 18 L6 18 Z'/%3E%3C/svg%3E" alt=""> Pastry & dough</div>
+        </div>
+        <!-- CATEGORY IMAGE (1) used inline above, plus optional infographic -->
+    </section>
+
+    <!-- TRENDING TOPICS + LATEST ARTICLES (combined) -->
+    <section class="section">
+        <h2>Trending topics</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:0.8rem 1.6rem; margin-bottom:2rem;">
+            <span style="background:#e8dfd5; padding:0.2rem 1.2rem; border-radius:30px;">#sourdoughhydration</span>
+            <span style="background:#e8dfd5; padding:0.2rem 1.2rem; border-radius:30px;">#umamiboost</span>
+            <span style="background:#e8dfd5; padding:0.2rem 1.2rem; border-radius:30px;">#fermentedhotsauce</span>
+            <span style="background:#e8dfd5; padding:0.2rem 1.2rem; border-radius:30px;">#brownbutter</span>
+        </div>
+        <h2>Latest articles</h2>
+        <div class="article-grid">
+            <article class="article-card"><span class="cat-tag">Guide</span><h3>Brine science for poultry</h3><p>Osmosis, salt penetration, and juiciness — a 1500-word deep dive.</p><div class="meta">6 Apr 2026</div></article>
+            <article class="article-card"><span class="cat-tag">Ingredient</span><h3>Vanilla: beyond the pod</h3><p>Extraction methods, grades, and flavour compounds.</p><div class="meta">4 Apr 2026</div></article>
+            <article class="article-card"><span class="cat-tag">Technique</span><h3>Slow-roasting: collagen to gelatin</h3><p>Time-temperature curves for tough cuts.</p><div class="meta">2 Apr 2026</div></article>
+        </div>
+    </section>
+
+    <!-- IN-DEPTH TUTORIALS + RESOURCE HUB (with optional infographic) -->
+    <section class="section">
+        <h2>In-depth tutorials</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+            <div>
+                <h3>Sourdough from scratch</h3>
+                <p>Day-by-day guide with fermentation schedules, hydration adjustments, and crumb analysis.</p>
+                <div class="infographic-box">
+                    <!-- optional infographic image (1) -->
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='80' viewBox='0 0 240 80'%3E%3Crect width='240' height='80' fill='%23d6c5b8'/%3E%3Ctext x='20' y='45' font-family='sans-serif' font-size='14' fill='%232d2823'%3EStarter · Levain · Autolyse%3C/text%3E%3C/svg%3E"
+                         alt="Sourdough timeline infographic">
+                </div>
+            </div>
+            <div>
+                <h3>Resource hub</h3>
+                <ul class="checklist" style="background:#f3ede7;">
+                    <li>Recommended thermometers & scales</li>
+                    <li>Flour protein database (50+ brands)</li>
+                    <li>Salt conversion table (kosher, sea, fine)</li>
+                    <li>Butterfat percentages around the world</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (schema-ready) -->
+    <section class="section">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-item"><strong>Why does my sourdough taste flat?</strong> <p>Often due to under-fermentation or weak starter. We recommend a 1:1:1 feeding schedule for 3 days before baking.</p></div>
+        <div class="faq-item"><strong>What’s the ideal temperature for proofing?</strong> <p>Between 24–27°C (75–80°F). Use a proofing box or the oven with the light on.</p></div>
+        <div class="faq-item"><strong>Can I substitute whole wheat for bread flour?</strong> <p>Yes, but increase hydration by 5–8% due to higher bran absorption.</p></div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div><strong style="font-size:1.5rem; font-family:Martel,serif;">The Crestwood Dispatch</strong><br>Weekly insights, never spam.</div>
+        <div><input type="email" placeholder="your@email.com"> <button>Subscribe</button></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span>© 2026 Crestwood Feast Journal — recipe authority since 2016</span>
+        <span>✶ 10+ years of kitchen science</span>
+    </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>
